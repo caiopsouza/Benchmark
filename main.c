@@ -5,7 +5,7 @@
 double get_time_in_seconds()
 {
     struct timespec t;
-    clock_gettime(CLOCK_MONOTONIC, &t);
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &t);
     return (double)t.tv_sec + 1.0e-9 * t.tv_nsec;
 }
 
